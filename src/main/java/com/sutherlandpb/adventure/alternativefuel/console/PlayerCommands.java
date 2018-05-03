@@ -38,8 +38,8 @@ public class PlayerCommands {
     public String say(@ShellOption String something) {
         return "You say " + something.trim();
     }
-    @ShellMethod("Say \"something\" (you have to use quotes for now)")
-    public String say(@ShellOption String something) {
-        return "You say " + something.trim();
+    @ShellMethod("Write \"something\" (you have to use quotes for now)")
+    public String write(@ShellOption String something) {
+        return "You write " + something.trim();
     }
 }
