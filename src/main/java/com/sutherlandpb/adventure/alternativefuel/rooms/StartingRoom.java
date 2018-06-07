@@ -22,7 +22,7 @@ public class StartingRoom implements RoomInterface {
 
     @Override
     public String look() {
-        return "It's the same old office where you clock in and out.  There is an out of date calendar on the wall with a picture of a bright red PX450, the car looks fast.  There is a door to the North.";
+        return "It's the same old office where you clock in and out.  There is an out-of-date calendar on the wall with a picture of a bright red PX450, the car looks fast.  There is a door to the North.";
     }
 
     @Override
