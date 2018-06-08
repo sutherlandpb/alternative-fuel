@@ -8,7 +8,14 @@ import org.springframework.stereotype.Component;
 public class StartingRoom implements RoomInterface {
 
     @Autowired
+    private AutoShopRoom autoShopRoom;
+
+    public StartingRoom(@Autowired PlayerDataContainer playerDataContainer) {
+        this.playerDataContainer = playerDataContainer;
+    }
+
     private PlayerDataContainer playerDataContainer;
+
 
     @Override
     public String getName() {
@@ -27,7 +34,7 @@ public class StartingRoom implements RoomInterface {
 
     @Override
     public String goNorth() {
-        return playerDataContainer.setNextRoom("You go North... ", new AutoShopRoom());
+        return playerDataContainer.setNextRoom("You go North... ", autoShopRoom);
     }
 
     @Override

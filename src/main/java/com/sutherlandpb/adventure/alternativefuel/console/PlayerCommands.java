@@ -1,7 +1,6 @@
 package com.sutherlandpb.adventure.alternativefuel.console;
 
 import com.sutherlandpb.adventure.alternativefuel.Player.PlayerDataContainer;
-import com.sutherlandpb.adventure.alternativefuel.service.RoomNavigationService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.shell.standard.ShellComponent;

@@ -2,11 +2,16 @@ package com.sutherlandpb.adventure.alternativefuel.rooms;
 
 import com.sutherlandpb.adventure.alternativefuel.Player.PlayerDataContainer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AutoShopRoom implements RoomInterface{
 
     @Autowired
     private PlayerDataContainer playerDataContainer;
+
+    @Autowired
+    private StartingRoom startingRoom;
 
     @Override
     public String getName() {
@@ -15,7 +20,7 @@ public class AutoShopRoom implements RoomInterface{
 
     @Override
     public String start( String enteringMessage) {
-        return enteringMessage + "You are in the office of a mechanic shop.";
+        return enteringMessage + "You are in the mechanic shop.";
     }
 
     @Override
@@ -30,7 +35,7 @@ public class AutoShopRoom implements RoomInterface{
 
     @Override
     public String goSouth() {
-        return playerDataContainer.setNextRoom("You go South... ", new StartingRoom());
+        return playerDataContainer.setNextRoom("You go South... ", startingRoom);
     }
 
     @Override

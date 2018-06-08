@@ -1,5 +1,8 @@
 package com.sutherlandpb.adventure.alternativefuel.rooms;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class NoRoom implements RoomInterface {
     @Override
     public String getName() {
