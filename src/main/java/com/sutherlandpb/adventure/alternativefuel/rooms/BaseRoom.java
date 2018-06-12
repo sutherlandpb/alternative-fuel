@@ -17,17 +17,17 @@ public class BaseRoom implements RoomInterface{
 
     @Override
     public String getName() {
-        return null;
+        throw new IllegalStateException("Room not configured properly, must override getName");
     }
 
     @Override
     public String start(String enteringMessage) {
-        return null;
+        throw new IllegalStateException("Room not configured properly, must override start");
     }
 
     @Override
     public String look() {
-        return null;
+        throw new IllegalStateException("Room not configured properly, must override look");
     }
 
     @Override
