@@ -4,11 +4,21 @@ import com.sutherlandpb.adventure.alternativefuel.Player.PlayerDataContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 @Component
-public class StartingRoom implements RoomInterface {
+public class StartingRoom extends BaseRoom{
 
     @Autowired
     private AutoShopRoom autoShopRoom;
+
+    @PostConstruct
+    public void setRooms() {
+        this.setNorthRoom(autoShopRoom);
+        this.setSouthRoom(null);
+        this.setWestRoom(null);
+        this.setEastRoom(null);
+    }
 
     public StartingRoom(@Autowired PlayerDataContainer playerDataContainer) {
         this.playerDataContainer = playerDataContainer;
@@ -30,25 +40,5 @@ public class StartingRoom implements RoomInterface {
     @Override
     public String look() {
         return "It's the same old office where you clock in and out.  There is an out-of-date calendar on the wall with a picture of a bright red PX450, the car looks fast.  There is a door to the North.";
-    }
-
-    @Override
-    public String goNorth() {
-        return playerDataContainer.setNextRoom("You go North... ", autoShopRoom);
-    }
-
-    @Override
-    public String goSouth() {
-        return "You can't go South!";
-    }
-
-    @Override
-    public String goWest() {
-        return "You can't go West!";
-    }
-
-    @Override
-    public String goEast() {
-        return "You can't go East!";
     }
 }
