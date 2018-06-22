@@ -2,7 +2,7 @@ package com.sutherlandpb.adventure.alternativefuel.Player;
 
 import com.sutherlandpb.adventure.alternativefuel.rooms.NoRoom;
 import com.sutherlandpb.adventure.alternativefuel.rooms.RoomInterface;
-import com.sutherlandpb.adventure.alternativefuel.rooms.StartingRoom;
+import com.sutherlandpb.adventure.alternativefuel.rooms.c.C19StartingRoom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +15,7 @@ public class PlayerDataContainer {
     private NoRoom noRoom;
 
     @Autowired
-    private StartingRoom startingRoom;
+    private C19StartingRoom c19StartingRoom;
 
     private RoomInterface currentRoom;
 
@@ -26,7 +26,7 @@ public class PlayerDataContainer {
 
     public String startFirstTime() {
         if (currentRoom instanceof NoRoom) {
-            currentRoom = startingRoom;
+            currentRoom = c19StartingRoom;
             return currentRoom.start("You start your adventure... ");
         } else {
             return "You have already started your adventure";

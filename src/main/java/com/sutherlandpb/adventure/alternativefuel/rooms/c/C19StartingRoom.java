@@ -1,31 +1,28 @@
-package com.sutherlandpb.adventure.alternativefuel.rooms;
+package com.sutherlandpb.adventure.alternativefuel.rooms.c;
 
 import com.sutherlandpb.adventure.alternativefuel.Player.PlayerDataContainer;
+import com.sutherlandpb.adventure.alternativefuel.rooms.BaseRoom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
 @Component
-public class StartingRoom extends BaseRoom{
+public class C19StartingRoom extends BaseRoom {
 
     @Autowired
-    private AutoShopRoom autoShopRoom;
+    private PlayerDataContainer playerDataContainer;
+
+    @Autowired
+    private C18AutoShopRoom c18AutoShopRoom;
 
     @PostConstruct
     public void setRooms() {
-        this.setNorthRoom(autoShopRoom);
+        this.setNorthRoom(c18AutoShopRoom);
         this.setSouthRoom(null);
         this.setWestRoom(null);
         this.setEastRoom(null);
     }
-
-    public StartingRoom(@Autowired PlayerDataContainer playerDataContainer) {
-        this.playerDataContainer = playerDataContainer;
-    }
-
-    private PlayerDataContainer playerDataContainer;
-
 
     @Override
     public String getName() {
